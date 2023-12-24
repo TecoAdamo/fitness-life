@@ -8,18 +8,21 @@ export default function Home() {
     return (
         <View style={styles.Container}>
             <CalendarStrip
-                style={{ height: 100, paddingTop: 20 }}
-                calendarColor={'#FFFFFF'}
-                calendarHeaderStyle={{ color: '#22c55e' }}
-                dateNumberStyle={{ color: 'black' }}
-                dateNameStyle={{ color: 'black' }}
-                highlightDateNumberStyle={{ color: '#22c55e' }}
-                highlightDateNameStyle={{ color: '#22c55e' }}
+                style={{ height: 140, paddingTop: 40 }}
+                calendarColor={'#334155'}
+                calendarHeaderStyle={{ color: '#fff' }}
+                dateNumberStyle={{ color: 'white' }}
+                dateNameStyle={{ color: 'white' }}
+                highlightDateNumberStyle={{ color: '#FFFF00' }}
+                highlightDateNameStyle={{ color: '#FFFF00' }}
                 startingDate={moment()}
                 selectedDate={moment()}
                 onDateSelected={(date) => {
                     console.log('Selected Date: ', date);
                 }}
+                highlightDateContainerStyle={{ borderWidth: 2, borderColor: '#fff', borderRadius: 40 }}
+                scrollable={true}
+                calendarAnimation={{ type: 'sequence', duration: 30 }}
             />
 
             <View style={styles.boxEnd}>
@@ -32,7 +35,7 @@ export default function Home() {
 const styles = StyleSheet.create({
     Container: {
         flex: 1,
-        backgroundColor: '#22c55e'
+        backgroundColor: '#334155'
     },
     boxEnd: {
         backgroundColor: '#fff',
