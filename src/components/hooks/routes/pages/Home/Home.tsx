@@ -60,20 +60,22 @@ const styles = StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
         fontSize: 20,
-        marginTop: 10
+        marginTop: 10,
+        right: 2
     },
     boxTitles: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 20,
+        left: 10
     },
     subTitle: {
         textAlign: 'center',
         color: 'white',
         fontWeight: 'bold',
         fontSize: 80,
-        marginRight: 10,
+        marginRight: 1,
     },
     subTitleText: {
         textAlign: 'center',
