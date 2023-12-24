@@ -1,31 +1,10 @@
 import React from "react";
-import { View, StyleSheet, Text, FlatList } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import CalendarStrip from "react-native-calendar-strip";
 import moment from 'moment'
+import Products from "../../../../Products";
 
 export default function Home() {
-
-    const data = [
-        {
-            id: '127245',
-            name: 'Arroz',
-            kcal: 130,
-            date: moment()
-        },
-        {
-            id: '1235467',
-            name: 'Pão',
-            kcal: 265,
-            date: moment()
-        },
-        {
-            id: '15467',
-            name: 'Peixe',
-            kcal: 206,
-            date: moment()
-        },
-
-    ]
 
     return (
         <View style={styles.Container}>
@@ -54,13 +33,8 @@ export default function Home() {
 
             <View style={styles.boxEnd} />
 
-            <View style={styles.itensContainer}>
-                <FlatList
-                    data={data}
-                    keyExtractor={item => item.id}
-                    renderItem={({ item }) => <Text style={styles.itensText}>{item.name}</Text>}
-                />
-            </View>
+            <Products />
+
         </View>
     )
 }
@@ -109,7 +83,7 @@ const styles = StyleSheet.create({
         marginTop: 35
     },
     itensContainer: {
-        marginTop: 30, // Ajuste aqui para o espaço desejado
+        marginTop: 45,
         paddingHorizontal: 30,
     },
     itensText: {
