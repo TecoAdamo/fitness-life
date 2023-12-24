@@ -1,10 +1,32 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
-
+import { View, StyleSheet, Text, FlatList } from "react-native";
 import CalendarStrip from "react-native-calendar-strip";
 import moment from 'moment'
 
 export default function Home() {
+
+    const data = [
+        {
+            id: '127245',
+            name: 'Arroz',
+            kcal: 130,
+            date: moment()
+        },
+        {
+            id: '1235467',
+            name: 'Pão',
+            kcal: 265,
+            date: moment()
+        },
+        {
+            id: '15467',
+            name: 'Peixe',
+            kcal: 206,
+            date: moment()
+        },
+
+    ]
+
     return (
         <View style={styles.Container}>
             <CalendarStrip
@@ -24,9 +46,20 @@ export default function Home() {
                 scrollable={true}
                 calendarAnimation={{ type: 'sequence', duration: 30 }}
             />
+            <Text style={styles.titleText}>Consumindo no dia</Text>
+            <View style={styles.boxTitles}>
+                <Text style={styles.subTitle}>100</Text>
+                <Text style={styles.subTitleText}>/kcal</Text>
+            </View>
 
-            <View style={styles.boxEnd}>
+            <View style={styles.boxEnd} />
 
+            <View style={styles.itensContainer}>
+                <FlatList
+                    data={data}
+                    keyExtractor={item => item.id}
+                    renderItem={({ item }) => <Text style={styles.itensText}>{item.name}</Text>}
+                />
             </View>
         </View>
     )
@@ -47,5 +80,39 @@ const styles = StyleSheet.create({
         right: 0,
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30
+    },
+    titleText: {
+        textAlign: 'center',
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 20,
+        marginTop: 10
+    },
+    boxTitles: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 20,
+    },
+    subTitle: {
+        textAlign: 'center',
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 80,
+        marginRight: 10,
+    },
+    subTitleText: {
+        textAlign: 'center',
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 15,
+        marginTop: 35
+    },
+    itensContainer: {
+        marginTop: 30, // Ajuste aqui para o espaço desejado
+        paddingHorizontal: 30,
+    },
+    itensText: {
+        marginBottom: 8,
     }
 })
