@@ -3,11 +3,13 @@ import React from "react";
 import { StatusBar } from 'expo-status-bar';
 import { View, Text } from "react-native";
 
+import Routes from "./components/hooks/routes";
+
 export default function Main() {
     return (
-        <View >
-            <Text>Hello</Text>
+        <>
+            <Routes />
             <StatusBar style="auto" />
-        </View>
+        </>
     )
 }
