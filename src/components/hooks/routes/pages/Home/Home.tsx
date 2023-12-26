@@ -57,8 +57,8 @@ export default function Home() {
             />
             <Text style={styles.titleText}>Consumindo no dia</Text>
             <View style={styles.boxTitles}>
-                <Text style={styles.subTitle}>100</Text>
-                <Text style={styles.subTitleText}>/{currentKcal}</Text>
+                <Text style={styles.subTitle}>{currentKcal}</Text>
+                <Text style={styles.subTitleText}>/Kcal</Text>
             </View>
 
             <View style={styles.boxEnd} />

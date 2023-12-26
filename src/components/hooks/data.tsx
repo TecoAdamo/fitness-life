@@ -29,16 +29,22 @@ export const DataProvider: React.FC = ({ children }: React.PropsWithChildren<{}>
     }
 
     const updateCurrentDay = () => {
+        let filteredList: Item[] = []; // Declare filteredList fora do bloco if
+
         if (listAllItem) {
-            const filteredList = listAllItem.filter((item) =>
-                filterIsToday(item.date, currentDate))
+            filteredList = listAllItem.filter((item) =>
+                filterIsToday(item.date, currentDate)
+            );
         }
+
         const countKcal = filteredList.reduce((acc, currentValue) => {
-            return acc + currentValue.kcal
-        }, 0)
+            return acc + currentValue.kcal;
+        }, 0);
+
         setCurrentList(filteredList);
-        setCurrentKcal(countKcal)
-    }
+        setCurrentKcal(countKcal);
+    };
+
 
     const handleChangeDate = async (Date: MomentInput) => {
         setCurrentDate(Date)

@@ -2,15 +2,31 @@ import { useState } from "react";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Keyboard } from "react-native";
 
 import { Button, Input } from "react-native-elements";
+import { useData } from "../../../hooks/data";
 
+import { useNavigation } from "@react-navigation/native";
 
+import { generateUniqueId } from "../../../../helpers/index";
+import moment from "moment";
 
 export default function NewItem() {
+
+    const { addItem } = useData()
+    const navigation = useNavigation()
+
     const [name, setName] = useState('')
     const [kcal, setKcal] = useState('')
 
     const handleOnSave = () => {
-        console.log(name, kcal)
+        if (name && kcal) {
+            addItem({
+                id: generateUniqueId(),
+                name,
+                kcal: Number(kcal),
+                date: moment()
+            })
+            navigation.goBack()
+        }
     }
     return (
         <View style={styles.container}>
