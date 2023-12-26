@@ -3,7 +3,7 @@ import { Item, DataProviderData } from "../../types";
 
 import moment, { MomentInput } from "moment";
 
-import { filterIsToday } from '../../helpers'
+import { filterIsToday, getLocalStorage, setLocalStorage } from '../../helpers'
 
 const DataContext = createContext<DataProviderData>({} as DataProviderData)
 
@@ -16,20 +16,36 @@ export const DataProvider: React.FC = ({ children }: React.PropsWithChildren<{}>
 
     const [listAllItem, setListAllItem] = useState<Item[]>([])
 
+    useEffect(() => {
+        getStorageData()
+    }, [])
+
+    useEffect(() => {
+        updateCurrentDay()
+
+    }, [currentDate, listAllItem])
+
+    const getStorageData = async () => {
+        const response = await getLocalStorage()
+        setListAllItem(response)
+    }
+
     const addItem = async (item: Item) => {
         if (listAllItem) {
             const newList = [...listAllItem, item]
             setListAllItem(newList)
+            await setLocalStorage(newList)
             updateCurrentDay()
         } else {
             setListAllItem([item])
+            await setLocalStorage([item])
             updateCurrentDay()
         }
         setCurrentDate(moment())
     }
 
     const updateCurrentDay = () => {
-        let filteredList: Item[] = []; // Declare filteredList fora do bloco if
+        let filteredList: Item[] = [];
 
         if (listAllItem) {
             filteredList = listAllItem.filter((item) =>
