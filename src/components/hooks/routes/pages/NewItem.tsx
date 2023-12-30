@@ -44,7 +44,7 @@ export default function NewItem() {
                 labelStyle={{ color: 'black' }}
                 value={kcal}
                 onChangeText={setKcal}
-
+                keyboardType="numeric"
             />
             <Button style={styles.ButtonContainer}
                 title="Salvar"
