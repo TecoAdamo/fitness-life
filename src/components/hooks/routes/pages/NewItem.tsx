@@ -32,7 +32,7 @@ export default function NewItem() {
         <View style={styles.container}>
             <Input style={styles.FormContainer}
                 label="Nome"
-                placeholder="Descrição:"
+                placeholder="Alimento/Bebidas:"
                 labelStyle={{ color: 'black' }}
                 value={name}
                 onChangeText={setName}
