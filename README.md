@@ -14,14 +14,14 @@ The project was primarily developed using React Native in conjunction with TypeS
 
 Additionally, various other essential technologies and libraries were integrated, such as:
 
-USESTATE and USEEFFECT: Integral to functional component development in React, useState enables the creation and updating of state variables within components, while useEffect allows the execution of side effects after rendering, such as fetching external data or manipulating the DOM.
+• USESTATE and USEEFFECT: Integral to functional component development in React, useState enables the creation and updating of state variables within components, while useEffect allows the execution of side effects after rendering, such as fetching external data or manipulating the DOM.
 
-CONTEXT: Used for managing and sharing state or specific information among different components, Context simplifies communication by eliminating the need to manually pass props through multiple levels of the component tree.
+• CONTEXT: Used for managing and sharing state or specific information among different components, Context simplifies communication by eliminating the need to manually pass props through multiple levels of the component tree.
 
-CALENDAR STRIP: Utilized for calendar implementation and manipulation, enabling intuitive visualization and interaction with dates and events.
+• CALENDAR STRIP: Utilized for calendar implementation and manipulation, enabling intuitive visualization and interaction with dates and events.
 
-ASYNCSTORAGE: Essential for persistent storage of data asynchronously on the device, ensuring information preservation even after the application is closed.
+• ASYNCSTORAGE: Essential for persistent storage of data asynchronously on the device, ensuring information preservation even after the application is closed.
 
-REACT NAVIGATION (Stack Navigation): Implemented to manage and ease navigation between different screens, offering an organized structure through navigation stacks, enhancing the user experience with fluid and intuitive transitions.
+• REACT NAVIGATION (Stack Navigation): Implemented to manage and ease navigation between different screens, offering an organized structure through navigation stacks, enhancing the user experience with fluid and intuitive transitions.
 
 These technologies and libraries were fundamental in constructing a dynamic, interactive, and functional application, providing a solid foundation for creating an engaging and efficient user experience.
