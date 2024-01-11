@@ -9,26 +9,55 @@ import { Ionicons } from '@expo/vector-icons';
 import Home from "./pages/Home/Home"
 import NewItem from "./pages/NewItem";
 
+import Cart from './pages/Cart'
+
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
 export default function Routes() {
     return (
         <NavigationContainer>
-            <Tab.Navigator>
+            <Tab.Navigator
+                tabBarOptions={{
+                    activeTintColor: '#334155', // Cor quando a aba está ativa
+                    inactiveTintColor: 'rgba(51, 65, 85, 0.5)', // Cor quando a aba não está ativa
+                    labelStyle: { fontSize: 12 }, // Estilo do texto da aba
+                }}
+            >
                 <Tab.Screen
                     name="HomeStack"
                     component={HomeStack}
                     options={{
                         tabBarLabel: 'Home',
-                        tabBarIcon: ({ color, size }) => (
-                            <Ionicons name="ios-home" size={size} color={'#334155'} />
+                        tabBarIcon: ({ color, size, focused }) => (
+
+                            <Ionicons
+                                name={focused ? 'ios-home' : 'ios-home-outline'} // Use um ícone diferente para aba não ativa
+                                size={size}
+                                color={color}
+                                style={{ opacity: focused ? 1 : 0.5 }} // Ajuste a opacidade do ícone
+                            />
+
                         ),
                         headerShown: false,
-                        tabBarLabelStyle: { color: '#334155' },
                     }}
                 />
-
+                <Tab.Screen
+                    name="Cart"
+                    component={Cart}
+                    options={{
+                        tabBarLabel: 'Food',
+                        tabBarIcon: ({ color, size, focused }) => (
+                            <Ionicons
+                                name={focused ? 'fast-food' : 'fast-food-outline'} // Use um ícone diferente para aba não ativa
+                                size={size}
+                                color={color}
+                                style={{ opacity: focused ? 1 : 0.5 }} // Ajuste a opacidade do ícone
+                            />
+                        ),
+                        headerShown: false,
+                    }}
+                />
             </Tab.Navigator>
         </NavigationContainer>
     )
