@@ -23,7 +23,7 @@ export const DataProvider: React.FC = ({ children }: React.PropsWithChildren<{}>
     useEffect(() => {
         updateCurrentDay()
 
-    }, [currentDate, listAllItem])
+    }, [currentDate])
 
     const getStorageData = async () => {
         const response = await getLocalStorage()
@@ -35,11 +35,11 @@ export const DataProvider: React.FC = ({ children }: React.PropsWithChildren<{}>
             const newList = [...listAllItem, item]
             setListAllItem(newList)
             await setLocalStorage(newList)
-            updateCurrentDay()
+            // updateCurrentDay()
         } else {
             setListAllItem([item])
             await setLocalStorage([item])
-            updateCurrentDay()
+            // updateCurrentDay()
         }
         setCurrentDate(moment())
     }

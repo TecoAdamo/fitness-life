@@ -19,9 +19,9 @@ export default function Routes() {
         <NavigationContainer>
             <Tab.Navigator
                 tabBarOptions={{
-                    activeTintColor: '#334155', // Cor quando a aba está ativa
-                    inactiveTintColor: 'rgba(51, 65, 85, 0.5)', // Cor quando a aba não está ativa
-                    labelStyle: { fontSize: 12 }, // Estilo do texto da aba
+                    activeTintColor: '#334155',
+                    inactiveTintColor: 'rgba(51, 65, 85, 0.5)',
+                    labelStyle: { fontSize: 12 },
                 }}
             >
                 <Tab.Screen
@@ -32,10 +32,10 @@ export default function Routes() {
                         tabBarIcon: ({ color, size, focused }) => (
 
                             <Ionicons
-                                name={focused ? 'ios-home' : 'ios-home-outline'} // Use um ícone diferente para aba não ativa
+                                name={focused ? 'ios-home' : 'ios-home-outline'}
                                 size={size}
                                 color={color}
-                                style={{ opacity: focused ? 1 : 0.5 }} // Ajuste a opacidade do ícone
+                                style={{ opacity: focused ? 1 : 0.5 }}
                             />
 
                         ),
@@ -49,10 +49,10 @@ export default function Routes() {
                         tabBarLabel: 'Food',
                         tabBarIcon: ({ color, size, focused }) => (
                             <Ionicons
-                                name={focused ? 'fast-food' : 'fast-food-outline'} // Use um ícone diferente para aba não ativa
+                                name={focused ? 'fast-food' : 'fast-food-outline'}
                                 size={size}
                                 color={color}
-                                style={{ opacity: focused ? 1 : 0.5 }} // Ajuste a opacidade do ícone
+                                style={{ opacity: focused ? 1 : 0.5 }}
                             />
                         ),
                         headerShown: false,
